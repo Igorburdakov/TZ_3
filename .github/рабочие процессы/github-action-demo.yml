@@ -1,0 +1,12 @@
+name: Test programm
+on: [push]
+jobs:
+  build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                python-version: [3.7]
+        steps:
+            - uses: actions/checkout@v2
+            - name: Run Test
+              run: python -m unittest discover .
