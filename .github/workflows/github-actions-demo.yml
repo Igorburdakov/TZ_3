@@ -1,17 +1,13 @@
 name: Test programm
-on: [push]
+on:
+  workflow_dispatch:
 jobs:
   build:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                python-version: [3.7]
-        steps:
-            - uses: actions/checkout@v2
-            - name: Set up Python all python version
-              uses: actions/setup-python@v2
-              with:
-                python-version: ${{ matrix.python-version }}
-                architecture: x64
-            - name: Run Test
-              run: python -m unittest discover .
+      runs-on: ubuntu-latest
+      strategy:
+          matrix:
+              python-version: [3.7]
+      steps:
+          - uses: actions/checkout@v2
+          - name: Run Test
+            run: python -m unittest discover .
