@@ -38,6 +38,7 @@ def pro_on(name):
         for i in range(len(a)):
             a[i] = a[i].strip(",")
         return num_sum(a), num_multiply(a), num_max(a), num_min(a), a
+# В программе не может возникнуть ошибки переполнения, так как все числовые значения имеют тип int
 
 
 # print(pro_on("file numbers.txt"))
